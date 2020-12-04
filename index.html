@@ -1,24 +1,57 @@
 <!DOCTYPE html>
-<html>
-    <title>Pilotage de volet</title>
+<html lang="fr">
 
-    
-    <body>
-        
-        
-        
-        <div class="container">
- 
-          <div class="range-slider">
-            <input type="range" orient="vertical" min="0" max="100" />
-          </div> 
-          
-          <p class="debug">DEBUG : <span class="volet-fermeture-valeur">VALEUR</span> </p>
-          
-        </div>
-                
-                
-        
-    </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="style.css">
+  <title>Volets</title>
+</head>
+
+<body>
+  <div class="fenetre">
+    <input id="volet" type="range" min="1" max="15" value="1" oninput="ouverture()" list="custom-list">
+    <div id="store">
+      <div class="latte">
+
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  //variables
+  var range = document.getElementById('volet');
+  var store = document.getElementById('store');
+  var latte = document.getElementsByClassName('latte')
+
+
+
+  function ouverture() {
+    if (range.value <= range.max - 1) {
+      store.innerHTML = '';
+    }
+    //CREATION DES LATTES
+    for (var i = 0; i < range.value; i++) {
+
+      if (range.value <= range.max - 1) {
+        let div = document.createElement('div')
+        div.className = "latte";
+        store.appendChild(div);
+      }
+    }
+
+    //FIN DE L'OUVERTURE
+    if (range.value == range.max) {
+      for (var i = 0; i < latte.length; i++) {
+        latte[i].style.transform = 'skew(0deg)';
+        latte[i].style.height = '37px';
+        latte[i].style.marginLeft = '0px';
+        latte[i].style.marginBottom = '1px';
+      }
+    }
+
+  }
+</script>
+
 </html>
-<!--La solution est sur https://codepen.io/jim005 -->

@@ -1,0 +1,54 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* APPARENCE DU VOLET */
+#volet {
+  position: absolute;
+  z-index: 1;
+  -webkit-appearance: none;
+  outline: none;
+  transform-origin: top left;
+  transform: rotate(90deg);
+  width: 560px;
+  background-color: transparent;
+  padding: 0;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+/*CURSEUR*/
+#volet::-webkit-slider-thumb {
+  height: 30px;
+  width: 45px;
+  -webkit-appearance: none;
+  background: #0099ff;
+  border-radius: 5px;
+}
+
+/* APPARENCE DU STORE */
+#store {
+  width: 300px;
+  height: 600px;
+  background-color: #d6d4fc;
+  perspective: 400px;
+  margin: 0 auto;
+}
+
+/* APPARENCE DES LATTES */
+.latte {
+  width: 100%;
+  height: 30px;
+  margin-left: 10px;
+  background-color: #5607d5;
+  transform: skew(35deg);
+  margin-bottom: 10px;
+}

@@ -21,20 +21,20 @@
 </body>
 <script>
   //variables
-  var range = document.getElementById('volet');
-  var store = document.getElementById('store');
-  var latte = document.getElementsByClassName('latte')
+  let volet = document.getElementById('volet');
+  let store = document.getElementById('store');
+  let latte = document.getElementsByClassName('latte')
 
 
 
   function ouverture() {
-    if (range.value <= range.max - 1) {
+    if (volet.value <= volet.max - 1) {
       store.innerHTML = '';
     }
     //CREATION DES LATTES
-    for (var i = 0; i < range.value; i++) {
+    for (var i = 0; i < volet.value; i++) {
 
-      if (range.value <= range.max - 1) {
+      if (volet.value <= volet.max - 1) {
         let div = document.createElement('div')
         div.className = "latte";
         store.appendChild(div);
@@ -42,7 +42,7 @@
     }
 
     //FIN DE L'OUVERTURE
-    if (range.value == range.max) {
+    if (volet.value == volet.max) {
       for (var i = 0; i < latte.length; i++) {
         latte[i].style.transform = 'skew(0deg)';
         latte[i].style.height = '37px';
